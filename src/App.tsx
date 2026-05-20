@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./app.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root";
 import Overview from "./routes/overview/Overview";
