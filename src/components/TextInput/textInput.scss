@@ -1,0 +1,11 @@
+@use "../../_variables" as *;
+
+.input-text {
+  background-color: $gray-90;
+  padding: 1rem;
+  border: solid 1px $gray-85;
+  border-radius: 10px;
+}
+.input-text:focus {
+  outline: solid 1px $primary;
+}
