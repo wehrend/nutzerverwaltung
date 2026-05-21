@@ -1,5 +1,11 @@
+import UserCard from "../../components/UserCard/UserCard";
+
 function Overview() {
-  return <>Overview</>;
+  return (
+    <>
+      <UserCard />
+    </>
+  );
 }
 
 export default Overview;
