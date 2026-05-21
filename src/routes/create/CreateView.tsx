@@ -4,6 +4,7 @@ import { useFormInput } from "../../hooks/useFormInput";
 import "./createView.scss";
 import DateInput from "../../components/DateInput/DateInput";
 import SelectInput from "../../components/SelectInput/SelectInput";
+import SubmitButton from "../../components/SubmitButton/SubmitButton";
 
 function CreateView() {
   const userNameProps = useFormInput("");
@@ -66,6 +67,7 @@ function CreateView() {
           onChange={websiteProps.handleInputChangeEvent}
         />
       </div>
+      <SubmitButton />
     </div>
   );
 }
