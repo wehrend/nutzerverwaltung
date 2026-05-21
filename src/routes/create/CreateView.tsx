@@ -7,13 +7,13 @@ import SelectInput from "../../components/SelectInput/SelectInput";
 import SubmitButton from "../../components/SubmitButton/SubmitButton";
 
 function CreateView() {
-  const userNameProps = useFormInput("");
-  const birthDateProps = useFormInput("");
-  const genderProps = useFormInput("");
-  const emailProps = useFormInput("");
-  const addressProps = useFormInput("");
-  const phoneProps = useFormInput("");
-  const websiteProps = useFormInput("");
+  const userNameProps = useFormInput("", true);
+  const birthDateProps = useFormInput("", true);
+  const genderProps = useFormInput("", true);
+  const emailProps = useFormInput("", true);
+  const addressProps = useFormInput("", true);
+  const phoneProps = useFormInput("", true);
+  const websiteProps = useFormInput("", true);
 
   return (
     <div className="input-form-container">
@@ -22,6 +22,7 @@ function CreateView() {
         <TextInput
           value={userNameProps.value}
           onChange={userNameProps.handleInputChangeEvent}
+          error={userNameProps.error}
         />
       </div>
       <div className="input-container">
@@ -44,6 +45,7 @@ function CreateView() {
         <TextInput
           value={emailProps.value}
           onChange={emailProps.handleInputChangeEvent}
+          error={emailProps.error}
         />
       </div>
       <div className="input-container">
@@ -51,6 +53,7 @@ function CreateView() {
         <TextInput
           value={addressProps.value}
           onChange={addressProps.handleInputChangeEvent}
+          error={addressProps.error}
         />
       </div>
       <div className="input-container">
@@ -58,6 +61,7 @@ function CreateView() {
         <TextInput
           value={phoneProps.value}
           onChange={phoneProps.handleInputChangeEvent}
+          error={phoneProps.error}
         />
       </div>
       <div className="input-container">
@@ -65,6 +69,7 @@ function CreateView() {
         <TextInput
           value={websiteProps.value}
           onChange={websiteProps.handleInputChangeEvent}
+          error={websiteProps.error}
         />
       </div>
       <SubmitButton />
