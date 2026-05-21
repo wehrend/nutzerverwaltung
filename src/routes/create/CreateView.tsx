@@ -3,6 +3,7 @@ import TextInput from "../../components/TextInput/TextInput";
 import { useFormInput } from "../../hooks/useFormInput";
 import "./createView.scss";
 import DateInput from "../../components/DateInput/DateInput";
+import SelectInput from "../../components/SelectInput/SelectInput";
 
 function CreateView() {
   const userNameProps = useFormInput("");
@@ -17,7 +18,6 @@ function CreateView() {
     <div className="input-form-container">
       <div className="input-container">
         <span className="input-title">Username</span>
-        <br />
         <TextInput
           value={userNameProps.value}
           onChange={userNameProps.handleInputChangeEvent}
@@ -25,7 +25,6 @@ function CreateView() {
       </div>
       <div className="input-container">
         <span className="input-title">Geburtsdatum</span>
-        <br />
         <DateInput
           value={birthDateProps.value}
           onChange={birthDateProps.handleInputChangeEvent}
@@ -33,15 +32,14 @@ function CreateView() {
       </div>
       <div className="input-container">
         <span className="input-title">Geschlecht</span>
-        <br />
-        <TextInput
+        <SelectInput
           value={genderProps.value}
           onChange={genderProps.handleInputChangeEvent}
+          options={["Männlich", "Weiblich", "Divers"]}
         />
       </div>
       <div className="input-container">
         <span className="input-title">E-Mail Addresse</span>
-        <br />
         <TextInput
           value={emailProps.value}
           onChange={emailProps.handleInputChangeEvent}
@@ -49,7 +47,6 @@ function CreateView() {
       </div>
       <div className="input-container">
         <span className="input-title">Post Addresse</span>
-        <br />
         <TextInput
           value={addressProps.value}
           onChange={addressProps.handleInputChangeEvent}
@@ -57,7 +54,6 @@ function CreateView() {
       </div>
       <div className="input-container">
         <span className="input-title">Telephon</span>
-        <br />
         <TextInput
           value={phoneProps.value}
           onChange={phoneProps.handleInputChangeEvent}
@@ -65,7 +61,6 @@ function CreateView() {
       </div>
       <div className="input-container">
         <span className="input-title">Webseite</span>
-        <br />
         <TextInput
           value={websiteProps.value}
           onChange={websiteProps.handleInputChangeEvent}

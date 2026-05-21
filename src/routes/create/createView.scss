@@ -8,3 +8,9 @@
   gap: 1rem;
   max-width: 25rem;
 }
+
+.input-container {
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+}
