@@ -2,6 +2,7 @@ import { useState } from "react";
 import TextInput from "../../components/TextInput/TextInput";
 import { useFormInput } from "../../hooks/useFormInput";
 import "./createView.scss";
+import DateInput from "../../components/DateInput/DateInput";
 
 function CreateView() {
   const userNameProps = useFormInput("");
@@ -25,7 +26,7 @@ function CreateView() {
       <div className="input-container">
         <span className="input-title">Geburtsdatum</span>
         <br />
-        <TextInput
+        <DateInput
           value={birthDateProps.value}
           onChange={birthDateProps.handleInputChangeEvent}
         />
