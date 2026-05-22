@@ -69,7 +69,7 @@ function CreateView() {
 
       alert("Added User");
     } else {
-      alert("Bitte Informationen ergänzen");
+      alert("Bitte Informationen ergänzen!");
     }
   }
 
@@ -95,7 +95,7 @@ function CreateView() {
         <SelectInput
           value={genderProps.value}
           onChange={genderProps.handleInputChangeEvent}
-          options={["Männlich", "Weiblich", "Divers"]}
+          options={["Männlich", "Weiblich", "Divers", ""]}
         />
       </div>
       <div className="input-container">
