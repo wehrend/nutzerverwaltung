@@ -8,8 +8,13 @@ import {
   faVenusMars,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
+import type { User } from "../../types/User";
 
-function UserCard() {
+type UserCardProps = {
+  user: User;
+};
+
+function UserCard({ user }: UserCardProps) {
   return (
     <div className="usercard-container">
       <div className="usercard-header">
@@ -20,7 +25,7 @@ function UserCard() {
       </div>
       <div className="usercard-body">
         <div className="usercard-body-title">
-          <strong>Liam</strong>
+          <strong>{user.name}</strong>
         </div>
         <div className="usercard-body-content">
           <div className="usercard-data-list">
@@ -28,19 +33,19 @@ function UserCard() {
               <span className="usercard-data-icon">
                 <FontAwesomeIcon icon={faCakeCandles} />
               </span>
-              <span className="usercard-data-text">21.1.1970</span>
+              <span className="usercard-data-text">{user.birthdate}</span>
             </div>
             <div className="usercard-data-list-item">
               <span className="usercard-data-icon">
                 <FontAwesomeIcon icon={faVenusMars} />
               </span>
-              <span className="usercard-data-text">Männlich</span>
+              <span className="usercard-data-text">{user.gender}</span>
             </div>
             <div className="usercard-data-list-item">
               <span className="usercard-data-icon">
                 <FontAwesomeIcon icon={faEnvelope} />
               </span>
-              <span className="usercard-data-text">test@test.de</span>
+              <span className="usercard-data-text">{user.email}</span>
             </div>
           </div>
           <div className="usercard-data-list">
@@ -48,19 +53,19 @@ function UserCard() {
               <span className="usercard-data-icon">
                 <FontAwesomeIcon icon={faAddressBook} />
               </span>
-              <span className="usercard-data-text">Musterstrasse 1</span>
+              <span className="usercard-data-text">{user.address}</span>
             </div>
             <div className="usercard-data-list-item">
               <span className="usercard-data-icon">
                 <FontAwesomeIcon icon={faPhone} />
               </span>
-              <span className="usercard-data-text">012345</span>
+              <span className="usercard-data-text">{user.phone}</span>
             </div>
             <div className="usercard-data-list-item">
               <span className="usercard-data-icon">
                 <FontAwesomeIcon icon={faGlobe} />
               </span>
-              <span className="usercard-data-text">www.test.de</span>
+              <span className="usercard-data-text">{user.website}</span>
             </div>
           </div>
         </div>

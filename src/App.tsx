@@ -7,6 +7,7 @@ import CreateView from "./routes/create/CreateView";
 import EditView from "./routes/edit/EditView";
 import userManagementReducer from "./hooks/userManagementReducer";
 import { UserContext } from "./context/UserContext";
+import type { User } from "./types/User";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,20 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [users, usersDispatch] = useReducer(userManagementReducer, []);
+  const [users, usersDispatch] = useReducer(
+    userManagementReducer,
+    [],
+    fetchInitUserData,
+  );
+
+  function fetchInitUserData(): User[] {
+    const stringUsers = localStorage.getItem("users");
+    if (stringUsers) {
+      return JSON.parse(stringUsers);
+    } else {
+      return [];
+    }
+  }
 
   return (
     <UserContext.Provider value={{ users, usersDispatch }}>
