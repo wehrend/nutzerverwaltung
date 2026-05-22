@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import TextInput from "../../components/TextInput/TextInput";
 import { useFormInput } from "../../hooks/useFormInput";
 import "./createView.scss";
 import DateInput from "../../components/DateInput/DateInput";
 import SelectInput from "../../components/SelectInput/SelectInput";
 import SubmitButton from "../../components/SubmitButton/SubmitButton";
+import { UserContext } from "../../context/UserContext";
+import { Gender, type User } from "../../types/User";
 
 function CreateView() {
   const userNameProps = useFormInput("", true);
@@ -14,6 +16,37 @@ function CreateView() {
   const addressProps = useFormInput("", true);
   const phoneProps = useFormInput("", true);
   const websiteProps = useFormInput("", true);
+
+  const { usersDispatch } = useContext(UserContext);
+
+  function convertStringToGender(value: string): Gender {
+    switch (value) {
+      case "Male":
+        return Gender.MALE;
+      case "Female":
+        return Gender.FEMALE;
+      case "other":
+        return Gender.OTHER;
+      default:
+        return Gender.NONE;
+    }
+  }
+
+  function handleSubmitNewUser() {
+    console.log("Submit button clicked");
+    const user: User = {
+      id: Math.random(),
+      name: userNameProps.value,
+      birthdate: birthDateProps.value,
+      gender: convertStringToGender(genderProps.value),
+      email: emailProps.value,
+      address: addressProps.value,
+      phone: phoneProps.value,
+      website: websiteProps.value,
+    };
+    usersDispatch({ type: "ADD_USER", user: user });
+    alert("added User");
+  }
 
   return (
     <div className="input-form-container">
@@ -72,7 +105,7 @@ function CreateView() {
           error={websiteProps.error}
         />
       </div>
-      <SubmitButton />
+      <SubmitButton onClick={handleSubmitNewUser} />
     </div>
   );
 }

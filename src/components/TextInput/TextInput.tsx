@@ -10,7 +10,6 @@ type TextInputProps = {
 
 function TextInput({ value, onChange, error }: TextInputProps) {
   function displayError() {
-    console.log("displayError (error.isError):" + error.isError);
     if (error.isError) {
       return <p className="input-error">{error.errorMessage}</p>;
     }
