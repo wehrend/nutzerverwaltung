@@ -12,28 +12,30 @@ export function useFormInput(value: string, required = false) {
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) {
     const inputValue = event.target.value;
-    console.log(inputValue);
     setInputValue(inputValue);
-    console.log("required: " + required);
-    if (required) {
-      if (inputValue === "") {
-        //throw error
-        setError({
-          isError: true,
-          errorMessage: "Bitte geben Sie einen Wert ein",
-        });
+    validateInput(inputValue);
+  }
 
-        console.log("Set error: " + error.isError);
-      } else {
-        // reset error state
-        setError({ isError: false, errorMessage: "" });
-        console.log("reset error:  " + error.isError);
-      }
+  function validateInput(inputValue: string): boolean {
+    console.log(inputValue);
+    if (required && inputValue === "") {
+      // Setze einen Fehler
+      setError({
+        isError: true,
+        errorMessage: "Bitte geben Sie einen Wert ein",
+      });
+      return false;
+    } else {
+      // Resette Fehler
+      setError({ isError: false, errorMessage: "" });
+      return true;
     }
   }
+
   return {
     value: inputValue,
     handleInputChangeEvent,
     error: error,
+    validateInput: validateInput,
   };
 }

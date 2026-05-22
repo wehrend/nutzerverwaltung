@@ -32,20 +32,45 @@ function CreateView() {
     }
   }
 
+  function isValidateInputs(): boolean {
+    const isUsernameValid = userNameProps.validateInput(userNameProps.value);
+    const isBirthdateValid = birthDateProps.validateInput(birthDateProps.value);
+    const isGenderValid = genderProps.validateInput(genderProps.value);
+    const isEmailValid = emailProps.validateInput(emailProps.value);
+    const isAddressValid = addressProps.validateInput(addressProps.value);
+    const isPhoneValid = phoneProps.validateInput(phoneProps.value);
+
+    const isWebsiteValid = websiteProps.validateInput(websiteProps.value);
+    return (
+      isUsernameValid &&
+      isBirthdateValid &&
+      isGenderValid &&
+      isEmailValid &&
+      isAddressValid &&
+      isPhoneValid &&
+      isWebsiteValid
+    );
+  }
+
   function handleSubmitNewUser() {
     console.log("Submit button clicked");
-    const user: User = {
-      id: Math.random(),
-      name: userNameProps.value,
-      birthdate: birthDateProps.value,
-      gender: convertStringToGender(genderProps.value),
-      email: emailProps.value,
-      address: addressProps.value,
-      phone: phoneProps.value,
-      website: websiteProps.value,
-    };
-    usersDispatch({ type: "ADD_USER", user: user });
-    alert("added User");
+    if (isValidateInputs()) {
+      const user: User = {
+        id: Math.random(),
+        name: userNameProps.value,
+        birthdate: birthDateProps.value,
+        gender: convertStringToGender(genderProps.value),
+        email: emailProps.value,
+        address: addressProps.value,
+        phone: phoneProps.value,
+        website: websiteProps.value,
+      };
+      usersDispatch({ type: "ADD_USER", user: user });
+
+      alert("Added User");
+    } else {
+      alert("Bitte Informationen ergänzen");
+    }
   }
 
   return (
