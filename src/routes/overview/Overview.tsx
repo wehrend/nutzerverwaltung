@@ -8,7 +8,7 @@ function Overview() {
 
   return (
     <>
-      {users.map((user) => (
+      {users.map((user: User) => (
         <Link to={`/edit/${user.id}`} key={`usercardlink-${user.id}`}>
           <UserCard user={user} key={`usercard-${user.id}`} />
         </Link>

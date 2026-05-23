@@ -1,8 +1,9 @@
-export enum Gender {
-  MALE = "male",
-  FEMALE = "female",
-  OTHER = "other",
-}
+export const Gender = {
+  MALE: "male",
+  FEMALE: "female",
+  OTHER: "other",
+  NONE: "",
+};
 
 export type User = {
   id: number;
