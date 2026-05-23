@@ -9,14 +9,26 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
 import type { User } from "../../types/User";
+import DeleteButton from "../DeleteButton/DeleteButton";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
 
 type UserCardProps = {
   user: User;
 };
 
 function UserCard({ user }: UserCardProps) {
+  const { usersDispatch } = useContext(UserContext);
+
+  function deleteUser() {
+    usersDispatch({ type: "REMOVE_USER", user: user });
+    alert("deleted User");
+  }
+
   return (
     <div className="usercard-container">
+      <DeleteButton onClick={deleteUser} />
+
       <div className="usercard-header">
         <img
           className="usercard-header-image"
