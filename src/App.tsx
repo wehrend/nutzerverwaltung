@@ -1,4 +1,4 @@
-import { use, useReducer, useState } from "react";
+import { useReducer } from "react";
 import "./app.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root";
@@ -11,12 +11,12 @@ import type { User } from "./types/User";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/nutzerverwaltung",
     element: <Root />,
     children: [
-      { path: "/overview", element: <Overview /> },
-      { path: "/create", element: <CreateView /> },
-      { path: "/edit/:id", element: <EditView /> },
+      { path: "overview", element: <Overview /> },
+      { path: "create", element: <CreateView /> },
+      { path: "edit/:id", element: <EditView /> },
     ],
   },
 ]);

@@ -28,7 +28,7 @@ function EditView() {
     if (editUser) {
       return (
         <>
-          <UserForm user={editUser} onSubmit={() => {}} />
+          <UserForm user={editUser} onSubmit={updateUser} />
         </>
       );
     } else {

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import UserCard from "../../components/UserCard/UserCard";
 import { UserContext } from "../../context/UserContext";
-import type { User } from "../../types/User";
 import { Link } from "react-router-dom";
 
 function Overview() {

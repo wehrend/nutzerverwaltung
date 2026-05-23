@@ -21,8 +21,6 @@ function UserForm({ user, onSubmit }: userFormProps) {
   const phoneProps = useFormInput(user?.phone ?? "", true);
   const websiteProps = useFormInput(user?.website ?? "", true);
 
-  const { usersDispatch } = useContext(UserContext);
-
   function convertStringToGender(value: string): Gender {
     switch (value) {
       case "Male":

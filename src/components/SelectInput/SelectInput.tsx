@@ -1,5 +1,3 @@
-import { ChangeEventHandler } from "react";
-
 type SelectInputProps = {
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
