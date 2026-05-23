@@ -20,9 +20,10 @@ type UserCardProps = {
 function UserCard({ user }: UserCardProps) {
   const { usersDispatch } = useContext(UserContext);
 
-  function deleteUser() {
+  function deleteUser(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    event.preventDefault();
     usersDispatch({ type: "REMOVE_USER", user: user });
-    alert("deleted User");
+    alert("Deleted user");
   }
 
   return (

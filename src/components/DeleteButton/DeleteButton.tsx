@@ -1,7 +1,7 @@
 import "./DeleteButton.scss";
 
 type DeleteButtonProps = {
-  onClick: () => void;
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 function DeleteButton({ onClick }: DeleteButtonProps) {

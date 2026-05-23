@@ -2,6 +2,7 @@ import { useContext } from "react";
 import UserCard from "../../components/UserCard/UserCard";
 import { UserContext } from "../../context/UserContext";
 import type { User } from "../../types/User";
+import { Link } from "react-router-dom";
 
 function Overview() {
   const { users } = useContext(UserContext);
@@ -9,7 +10,9 @@ function Overview() {
   return (
     <>
       {users.map((user) => (
-        <UserCard key={user.id} user={user} />
+        <Link to={`/edit/${user.id}`} key={`usercardlink-${user.id}`}>
+          <UserCard user={user} key={`usercard-${user.id}`} />
+        </Link>
       ))}
     </>
   );
