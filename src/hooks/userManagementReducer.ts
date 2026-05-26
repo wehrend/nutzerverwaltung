@@ -1,13 +1,13 @@
 import type { User } from "../types/User";
 
-type userManagmentState = User[];
+export type userManagmentState = User[];
 
-type userManagementAction = {
+export type userManagementAction = {
   type: "ADD_USER" | "REMOVE_USER" | "UPDATE_USER";
   user: User;
 };
 
-export default function userManagementReducer(
+export function userManagementReducer(
   prevState: userManagmentState,
   action: userManagementAction,
 ) {

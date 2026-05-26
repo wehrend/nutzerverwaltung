@@ -5,7 +5,7 @@ import Root from "./routes/Root";
 import Overview from "./routes/overview/Overview";
 import CreateView from "./routes/create/CreateView";
 import EditView from "./routes/edit/EditView";
-import userManagementReducer from "./hooks/userManagementReducer";
+import { userManagementReducer } from "./hooks/userManagementReducer";
 import { UserContext } from "./context/UserContext";
 import type { User } from "./types/User";
 

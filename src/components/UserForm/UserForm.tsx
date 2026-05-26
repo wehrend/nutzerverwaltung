@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
 import { useFormInput } from "../../hooks/useFormInput";
 import { Gender, type User } from "../../types/User";
 import DateInput from "../DateInput/DateInput";
@@ -21,7 +19,7 @@ function UserForm({ user, onSubmit }: userFormProps) {
   const phoneProps = useFormInput(user?.phone ?? "", true);
   const websiteProps = useFormInput(user?.website ?? "", true);
 
-  function convertStringToGender(value: string): Gender {
+  function convertStringToGender(value: string): string {
     switch (value) {
       case "Male":
         return Gender.MALE;

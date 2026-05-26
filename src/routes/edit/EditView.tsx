@@ -14,7 +14,7 @@ function EditView() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = users.find((user: { id: string }) => "" + user.id === id);
+    const user = users.find((user) => "" + user.id === id);
     setEditUser(user);
   }, [users, id]);
 

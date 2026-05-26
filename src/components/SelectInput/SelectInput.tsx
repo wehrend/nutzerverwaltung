@@ -1,6 +1,6 @@
 type SelectInputProps = {
   value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: React.ChangeEventHandler<HTMLSelectElement>;
   options: string[];
 };
 

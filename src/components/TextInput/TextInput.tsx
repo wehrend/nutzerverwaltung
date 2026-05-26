@@ -1,4 +1,3 @@
-import { ChangeEventHandler } from "react";
 import "./textInput.scss";
 import type { ValidationError } from "../../types/Validation";
 
